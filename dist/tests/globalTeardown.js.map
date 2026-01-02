@@ -1,0 +1,1 @@
+{"version":3,"file":"globalTeardown.js","sourceRoot":"","sources":["../../tests/globalTeardown.ts"],"names":[],"mappings":";;AAGA,iCAIC;AAND,uCAA2C;AAE5B,KAAK,UAAU,cAAc;IAC1C,OAAO,CAAC,GAAG,CAAC,4CAA4C,CAAC,CAAC;IAC1D,MAAM,IAAA,wBAAc,GAAE,CAAC;IACvB,UAAU,CAAC,GAAG,EAAE,CAAC,OAAO,CAAC,IAAI,CAAC,CAAC,CAAC,EAAE,IAAI,CAAC,CAAC;AAC1C,CAAC"}

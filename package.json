@@ -1,0 +1,53 @@
+{
+  "name": "frame3d",
+  "version": "1.0.0",
+  "description": "Quickly render images of 3D models (GLB/ glTF-binary)",
+  "main": "dist/index.js",
+  "bin": {
+    "frame3d": "frame3d.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "dev": "tsx watch src/index.ts",
+    "frame3d": "node frame3d.js",
+    "test": "jest",
+    "test:unit": "jest tests/unit --maxWorkers=1",
+    "test:integration": "jest tests/integration --maxWorkers=1",
+    "test:integration:health": "jest tests/integration/health.test.ts --maxWorkers=1",
+    "test:integration:single": "jest tests/integration/single.test.ts --maxWorkers=1",
+    "test:integration:sequence": "jest tests/integration/sequence.test.ts --maxWorkers=1",
+    "test:integration:batch": "jest tests/integration/batch.test.ts --maxWorkers=1",
+    "docker:build": "docker build -t frame3d .",
+    "docker:run": "docker run -p 8080:8080 frame3d"
+  },
+  "keywords": [
+    "3d",
+    "rendering",
+    "api",
+    "glb",
+    "model-viewer"
+  ],
+  "author": "yanexr",
+  "license": "MIT",
+  "dependencies": {
+    "@gltf-transform/core": "^4.2.0",
+    "@google/model-viewer": "^4.1.0",
+    "express": "^5.1.0",
+    "puppeteer-core": "^24.10.2",
+    "sharp": "^0.34.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.9.0",
+    "dotenv": "^16.4.5",
+    "jest": "^30.0.3",
+    "ts-jest": "^29.4.0",
+    "tsx": "^4.4.0",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
