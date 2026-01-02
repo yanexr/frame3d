@@ -13,7 +13,7 @@ Frame3D provides three modes with full control over camera, lighting, and enviro
 For full documentation and request schemas, see [frame3d.dev/docs](https://frame3d.dev/docs).
 
 ## Example
-![](examples/lounge-chair.gif)
+![](example-lounge-chair.gif)
 
 ```bash
 npm run frame3d -- mode=sequence model=./examples/model.glb background="radial-gradient(circle, #5f5f5f 0%, #141414 120%)" frameCount=66 rotationAxis=y width=1280 height=720 shadowIntensity=0.5 shadowSoftness=0.5 outputFormat=png out=./examples/seq/frame
