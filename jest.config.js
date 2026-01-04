@@ -13,7 +13,13 @@ module.exports = {
   testMatch: ["**/tests/**/*.test.ts", "**/?(*.)+(spec|test).ts"],
   transform: {
     "^.+\\.ts$": "ts-jest",
+    // Use babel-jest for ESM packages in node_modules
+    "^.+\\.m?js$": "babel-jest",
   },
+  // Transform ESM packages from node_modules (gltf-transform and its dependencies)
+  transformIgnorePatterns: [
+    "node_modules/(?!(@gltf-transform|property-graph)/)",
+  ],
   collectCoverageFrom: ["src/**/*.ts", "!src/**/*.d.ts", "!src/index.ts"],
   coverageDirectory: "coverage",
   coverageReporters: ["text", "lcov", "html"],

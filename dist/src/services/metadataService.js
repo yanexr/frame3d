@@ -2,11 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.extractMetadata = extractMetadata;
 const core_1 = require("@gltf-transform/core");
+const extensions_1 = require("@gltf-transform/extensions");
+const ALL_EXTENSIONS = [
+    ...extensions_1.KHRONOS_EXTENSIONS,
+    extensions_1.EXTMeshGPUInstancing,
+    extensions_1.EXTMeshoptCompression,
+    extensions_1.EXTTextureAVIF,
+    extensions_1.EXTTextureWebP,
+];
 async function extractMetadata(glbBuffer) {
     const view = glbBuffer instanceof Buffer
         ? new Uint8Array(glbBuffer)
         : new Uint8Array(glbBuffer);
-    const io = new core_1.NodeIO();
+    const io = new core_1.NodeIO().registerExtensions(ALL_EXTENSIONS);
     const document = await io.readBinary(view);
     const root = document.getRoot();
     const meshes = root.listMeshes();

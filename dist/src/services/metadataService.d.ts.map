@@ -1,1 +1,1 @@
-{"version":3,"file":"metadataService.d.ts","sourceRoot":"","sources":["../../../src/services/metadataService.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,aAAa,EAAiB,MAAM,cAAc,CAAC;AAO5D,wBAAsB,eAAe,CACnC,SAAS,EAAE,WAAW,GAAG,MAAM,GAC9B,OAAO,CAAC,aAAa,CAAC,CA+ExB"}
+{"version":3,"file":"metadataService.d.ts","sourceRoot":"","sources":["../../../src/services/metadataService.ts"],"names":[],"mappings":"AAQA,OAAO,EAAE,aAAa,EAAiB,MAAM,cAAc,CAAC;AAe5D,wBAAsB,eAAe,CACnC,SAAS,EAAE,WAAW,GAAG,MAAM,GAC9B,OAAO,CAAC,aAAa,CAAC,CA+ExB"}

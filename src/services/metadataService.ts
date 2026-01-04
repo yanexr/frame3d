@@ -1,5 +1,20 @@
 import { NodeIO } from "@gltf-transform/core";
+import {
+  KHRONOS_EXTENSIONS,
+  EXTMeshGPUInstancing,
+  EXTMeshoptCompression,
+  EXTTextureAVIF,
+  EXTTextureWebP,
+} from "@gltf-transform/extensions";
 import { ModelMetadata, AnimationInfo } from "../types/api";
+
+const ALL_EXTENSIONS = [
+  ...KHRONOS_EXTENSIONS,
+  EXTMeshGPUInstancing,
+  EXTMeshoptCompression,
+  EXTTextureAVIF,
+  EXTTextureWebP,
+];
 
 /**
  * Extracts basic metadata from a GLB model buffer.
@@ -13,7 +28,7 @@ export async function extractMetadata(
     glbBuffer instanceof Buffer
       ? new Uint8Array(glbBuffer)
       : new Uint8Array(glbBuffer);
-  const io = new NodeIO();
+  const io = new NodeIO().registerExtensions(ALL_EXTENSIONS);
   const document = await io.readBinary(view);
   const root = document.getRoot();
 
