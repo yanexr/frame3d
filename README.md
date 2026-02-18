@@ -10,7 +10,7 @@ Frame3D provides three modes with full control over camera, lighting, and enviro
 - **Batch renders** (multiple frames with per-frame options)
 - **Sequence renders** (multiple frames for rotation and/or animation)
 
-For full documentation and request schemas, see [frame3d.dev/docs](https://frame3d.dev/docs).
+For full documentation and request schemas, see [frame3d.dev/docs](https://frame3d.dev/docs/introduction).
 
 ## Example
 ![](example-lounge-chair.gif)
