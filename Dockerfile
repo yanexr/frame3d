@@ -1,4 +1,4 @@
-FROM node:20-slim
+FROM node:20.19.6-slim
 
 # Set environment variables for Puppeteer
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
@@ -9,7 +9,8 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     ca-certificates \
-    chromium \
+    chromium=143.0.7499.169-1~deb12u1 \
+    chromium-common=143.0.7499.169-1~deb12u1 \
     libasound2 \
     libatk-bridge2.0-0 \
     libatk1.0-0 \
