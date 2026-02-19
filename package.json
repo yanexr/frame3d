@@ -1,6 +1,6 @@
 {
   "name": "frame3d",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Quickly render images of 3D models (GLB/ glTF-binary)",
   "main": "dist/src/index.js",
   "bin": {
