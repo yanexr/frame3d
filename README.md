@@ -12,11 +12,12 @@ Frame3D provides three modes with full control over camera, lighting, and enviro
 
 For full documentation and request schemas, see [frame3d.dev/docs](https://frame3d.dev/docs/introduction).
 
-## Example
+Install globally with npm: `npm i -g frame3d`
+
 ![](example-lounge-chair.gif)
 
 ```bash
-npm run frame3d -- mode=sequence model=./examples/model.glb background="radial-gradient(circle, #5f5f5f 0%, #141414 120%)" frameCount=66 rotationAxis=y width=1280 height=720 shadowIntensity=0.5 shadowSoftness=0.5 outputFormat=png out=./examples/seq/frame
+frame3d mode=sequence model=./examples/model.glb background="radial-gradient(circle, #5f5f5f 0%, #141414 120%)" frameCount=66 rotationAxis=y width=1280 height=720 shadowIntensity=0.5 shadowSoftness=0.5 outputFormat=png out=./examples/seq/frame
 ```
 
 ## Requirements
@@ -35,9 +36,6 @@ Default limits are defined in [src/config.ts](src/config.ts). You can edit that 
 From the project root directory:
 
 ```bash
-npm ci
-npm run build
-
 docker build -t frame3d .
 docker run -p 8080:8080 frame3d
 ```
@@ -62,7 +60,6 @@ From the project root directory:
 
 ```bash
 npm ci
-npm run build
 ```
 
 **Configure Chrome/Chromium path:**
@@ -115,14 +112,23 @@ Notes:
 
 ### CLI default (auto-start Node server)
 
-From the project root directory:
+Install/use the CLI in one of these ways:
+
+- Global install: `npm i -g frame3d`
+- From source (linked globally): run `npm link` in the project root
+- From source (no global install): run `node frame3d.js ...` in the project root
+
+Then run:
+
+```bash
+frame3d model=./examples/model.glb outputFormat=png out=./examples/out/single.png
+```
+
+From source without global install:
 
 ```bash
 npm ci
-npm run build
-
-# Shortcut for local one-shot renders (auto-detects Chrome)
-npm run frame3d -- model=./examples/model.glb outputFormat=png out=./examples/out/single.png
+node frame3d.js model=./examples/model.glb outputFormat=png out=./examples/out/single.png
 ```
 
 The CLI auto-detects Chrome/Chromium. If detection fails, create `.env.local` with your Chrome path (see `.env.local.example`).
@@ -134,25 +140,25 @@ The CLI auto-detects Chrome/Chromium. If detection fails, create `.env.local` wi
 2. From the project root directory, call the running API and pass local files:
 
 ```bash
-npm run frame3d -- server=http://localhost:8080 model=./examples/model.glb outputFormat=png out=./examples/out/single.png
+frame3d server=http://localhost:8080 model=./examples/model.glb outputFormat=png out=./examples/out/single.png
 ```
 
 ### CLI Examples
 
 - **Single render with metadata:**
   ```bash
-  npm run frame3d -- model=./examples/model.glb outputFormat=png includeMetadata=true out=./examples/out/single.png
+  frame3d model=./examples/model.glb outputFormat=png includeMetadata=true out=./examples/out/single.png
   ```
 
 - **Batch via JSON file (with metadata):**
   - Create `./examples/request.json`, then:
   ```bash
-  npm run frame3d -- mode=batch json=@./examples/request.json includeMetadata=true out=./examples/out/batch
+  frame3d mode=batch json=@./examples/request.json includeMetadata=true out=./examples/out/batch
   ```
 
 - **Sequence (8 frames):**
   ```bash
-  npm run frame3d -- mode=sequence model=./examples/model.glb frameCount=8 rotationAxis=y outputFormat=png out=./examples/out/frames
+  frame3d mode=sequence model=./examples/model.glb frameCount=8 rotationAxis=y outputFormat=png out=./examples/out/frames
   ```
 
 ## Tests

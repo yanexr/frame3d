@@ -408,6 +408,24 @@ function decodeDataUrlToFile(dataUrl, outPath) {
 }
 
 async function main() {
+  if (process.argv.includes("--help") || process.argv.includes("-h")) {
+    console.log("Frame3D CLI");
+    console.log("\nUsage:");
+    console.log("  frame3d key=value ...");
+    console.log("\nCommon examples:");
+    console.log("  frame3d model=./examples/model.glb outputFormat=png out=./out/single.png");
+    console.log("  frame3d mode=sequence model=./examples/model.glb frameCount=8 rotationAxis=y out=./out/frames");
+    console.log("  frame3d mode=batch json=@./examples/request.json out=./out/batch");
+    console.log("\nOptions:");
+    console.log("  server=http://localhost:8080   Use existing server instead of auto-starting local API");
+    console.log("  mode=single|batch|sequence     Target route (default: single)");
+    console.log("  out=...                        Save output image(s) to disk");
+    console.log("  print-image                    Print base64 image data in response");
+    console.log("\nFull docs:");
+    console.log("  https://frame3d.dev/docs/introduction");
+    return;
+  }
+
   const { opts, body } = parseArgs(process.argv.slice(2));
   encodeKnownAssetFields(body);
 

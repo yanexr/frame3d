@@ -2,10 +2,25 @@
   "name": "frame3d",
   "version": "1.0.0",
   "description": "Quickly render images of 3D models (GLB/ glTF-binary)",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "bin": {
     "frame3d": "frame3d.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanexr/frame3d.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yanexr/frame3d/issues"
+  },
+  "homepage": "https://frame3d.dev/docs/introduction",
+  "files": [
+    "dist/src",
+    "frame3d.js",
+    "README.md",
+    "LICENSE",
+    ".env.local.example"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/src/index.js",
